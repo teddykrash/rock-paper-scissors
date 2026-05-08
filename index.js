@@ -76,4 +76,8 @@ resetBtn.addEventListener("click", () => {
     winsDisplay.innerText = 0;
     lossesDisplay.innerText = 0;
     tiesDisplay.innerText = 0;
-})
+    playerChoice.innerText = "?";
+    computerChoice.innerText = "?";
+    gameResult.innerText = "Make your move!";
+    gameResult.classList.remove("win", "lose", "tie");
+});
