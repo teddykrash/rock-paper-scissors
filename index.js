@@ -1,10 +1,9 @@
 const choices = ["rock", "paper", "scissors"];
-const score = {
+const score = JSON.parse(localStorage.getItem('score')) || {
     wins: 0,
     losses: 0,
     ties: 0
 };
-console.log(localStorage.getItem('score'));
 
 const getComputerChoice = () => {
     return choices[Math.floor(Math.random() * choices.length)];
@@ -45,6 +44,10 @@ const winsDisplay = document.querySelector("#wins");
 const lossesDisplay = document.querySelector("#losses");
 const tiesDisplay = document.querySelector("#ties");
 
+winsDisplay.innerText = score.wins;
+lossesDisplay.innerText = score.losses;
+tiesDisplay.innerText = score.ties;
+
 const playRound = (playerPick) => {
     playerChoice.innerText = playerPick;
     const computer = getComputerChoice();
@@ -60,9 +63,10 @@ const playRound = (playerPick) => {
     } else {
         gameResult.classList.add("tie");
     }
-console.log(localStorage.setItem('score', JSON.stringify(score)));
+
  
     updateScore(result);
+    localStorage.setItem('score', JSON.stringify(score));
     winsDisplay.innerText = score.wins;
     lossesDisplay.innerText = score.losses;
     tiesDisplay.innerText = score.ties;
@@ -82,4 +86,5 @@ resetBtn.addEventListener("click", () => {
     computerChoice.innerText = "?";
     gameResult.innerText = "Make your move!";
     gameResult.classList.remove("win", "lose", "tie");
+    localStorage.removeItem('score');
 });
