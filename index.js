@@ -4,6 +4,7 @@ const score = {
     losses: 0,
     ties: 0
 };
+console.log(localStorage.getItem('score'));
 
 const getComputerChoice = () => {
     return choices[Math.floor(Math.random() * choices.length)];
