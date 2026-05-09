@@ -59,7 +59,7 @@ const playRound = (playerPick) => {
     } else {
         gameResult.classList.add("tie");
     }
-console.log(localStorage.setItem('score', JSON.stringify('score')));
+console.log(localStorage.setItem('score', JSON.stringify(score)));
  
     updateScore(result);
     winsDisplay.innerText = score.wins;
