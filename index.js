@@ -79,6 +79,7 @@ resetBtn.addEventListener("click", () => {
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
+    
     winsDisplay.innerText = 0;
     lossesDisplay.innerText = 0;
     tiesDisplay.innerText = 0;
