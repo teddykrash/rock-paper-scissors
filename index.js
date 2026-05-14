@@ -72,6 +72,10 @@ const playRound = (playerPick) => {
     tiesDisplay.innerText = score.ties;
 };
 
+document.body.addEventListener('keydown', (event) => {
+    console.log(`Key pressed: ${event.key}`);
+});
+
 rockBtn.addEventListener("click", () => playRound("rock"));
 paperBtn.addEventListener("click", () => playRound("paper"));
 scissorsBtn.addEventListener("click", () => playRound("scissors"));
