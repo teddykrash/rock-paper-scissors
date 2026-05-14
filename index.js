@@ -75,6 +75,10 @@ const playRound = (playerPick) => {
 document.addEventListener('keydown', (e) => {
     if(e.key === 'r' || e.key === 'R'){
         playRound("rock");
+    }else if(e.key === 'p' || e.key === 'P'){
+        playRound("paper")
+    }else if(e.key === 's' || e.key === 'S'){
+        playRound("scissors")
     }
 });
 
